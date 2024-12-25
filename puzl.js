@@ -1,16 +1,16 @@
 const fs = require('fs');
 
-// Зчитування файлу
+
 fs.readFile('puzl.txt', 'utf8', (err, data) => {
     if (err) {
         console.error('Помилка при читанні файлу:', err);
         return;
     }
 
-    // Розбиваємо дані на масив чисел (кожен рядок - одне число)
+    
     const numbers = data.split('\n').map(line => line.trim()).filter(Boolean);
 
-    // Функція для пошуку найбільшого ланцюжка
+    
     function buildLongestSequence(numbers) {
         let maxSequence = '';
         let used = Array(numbers.length).fill(false);
@@ -47,7 +47,7 @@ fs.readFile('puzl.txt', 'utf8', (err, data) => {
     const result = buildLongestSequence(numbers);
     console.log('Найбільший ланцюжок:', result);
 
-    // Запис результату у файл result.txt
+    
     fs.writeFile('result.txt', result, (err) => {
         if (err) {
             console.error('Помилка при записі у файл:', err);
