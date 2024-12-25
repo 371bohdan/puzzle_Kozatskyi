@@ -46,6 +46,7 @@ fs.readFile('puzl.txt', 'utf8', (err, data) => {
 
     const result = buildLongestSequence(numbers);
     console.log('Найбільший ланцюжок:', result);
+    console.log('Довижина', result.length);
 
     
     fs.writeFile('result.txt', result, (err) => {
